@@ -26,7 +26,8 @@ let words = [
 	["soccer", "baseball"],
 	["soccer", "baseball"],
 	["soccer", "baseball"]
-]
+];
+let PLAYERS = 4;
 	
 
 function initialize()
@@ -41,9 +42,25 @@ function initialize()
 	backCard.style.display = "block";
 
 	cardWord = document.getElementById("word");
-	rowNumber = Math.floor((Math.random() * words.length) + 1);
+	rowNumber = Math.floor((Math.random() * words.length));
 	console.log(rowNumber);
 	cardWord.innerHTML = words[rowNumber][0];
+	
+	spyNumber = Math.floor((Math.random() * PLAYERS));
+	gameArray = [];
+	
+	for (i = 0; i < PLAYERS; i++) {
+		if(i == spyNumber)
+		{
+			gameArray.push(words[rowNumber][0]);
+		}
+		else
+		{
+			gameArray.push(words[rowNumber][1]);
+		}
+		
+		console.log(gameArray);
+9	}
 
 	//skyline = document.getElementById("skyline").src;
 }
