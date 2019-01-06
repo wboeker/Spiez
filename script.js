@@ -5,18 +5,45 @@ let cardWord = null;
 let footerLetter = null;
 let footerWord = null;
 var skyline;
+let words = [
+	["backpack", "suitcase"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"],
+	["soccer", "baseball"]
+]
+	
 
 function initialize()
 {
+	console.log(words[0]);
+	console.log(words[0][0]);
+	console.log(words[0][1]);
+	
 	frontCard = document.getElementById("front");
 	backCard = document.getElementById("back");
 	frontCard.style.display = "none";
 	backCard.style.display = "block";
 
-	cardLetter = document.getElementById("letter");
 	cardWord = document.getElementById("word");
-	footerLetter = document.getElementById("footer-letter");
-	footerWord = document.getElementById("footer-word");
+	rowNumber = Math.floor((Math.random() * words.length) + 1);
+	console.log(rowNumber);
+	cardWord.innerHTML = words[rowNumber][0];
 
 	//skyline = document.getElementById("skyline").src;
 }
