@@ -1,33 +1,83 @@
 let frontCard = null;
 let backCard = null;
-let cardLetter = null;
 let cardWord = null;
-let footerLetter = null;
-let footerWord = null;
-var skyline;
 let words = [
 	["backpack", "suitcase"],
 	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"],
-	["soccer", "baseball"]
+	["mango", "pineapple"],
+	["ice cream", "popsicle"],
+	["pillow", "couch"],
+	["computer", "tablet"],
+	["guitar", "ukulele"],
+	["spoon", "fork"],
+	["plastic bag", "purse"],
+	["burrito", "taco"],
+	["wrapping paper", "gift bag"],
+	["fork", "knife"],
+	["knife", "spoon"],
+	["dog", "cat"],
+	["hamster", "guinea pig"],
+	["backpack", "handbag"],
+	["textbook", "dictionary"],
+	["Mac Computer", "Windows Computer"],
+	["apple", "pear"],
+	["pencil", "pen"],
+	["stuffed animal", "animal"],
+	["bowls", "plates"],
+	["dance", "sing"],
+	["burger", "hotdog"],
+	["burger", "fried chicken"],
+	["fried chicken", "hotdog"],
+	["geometry dash", "doodle jump"],
+	["Pudong", "Puxi"],
+	["Shanghai", "Beijing"],
+	["Palo Alto", "Mountain View"],
+	["Boston", "New York"],
+	["Hugs", "Kisses"],
+	["Bed", "Beanbag"],
+	["Charcoal", "Paint"],
+	["Charcoal", "Watercolor"],
+	["Watercolor", "Paint"],
+	["Wendy", "Glenda"],
+	["Wendy", "Josh"],
+	["Wendy", "Ivy"],
+	["Glenda", "Josh"],
+	["Glenda", "Ivy"],
+	["Ivy", "Josh"],
+	["Hard Contacts", "Soft Contacts"],
+	["Hoodie", "Jacket"],
+	["chips", "crackers"],
+	["white", "black"],
+	["water", "juice"],
+	["angry", "frustrated"],
+	["sad", "depressed"],
+	["gudetama", "egg"],
+	["chicken", "duck"],
+	["leaf", "root"],
+	["pen", "pencil"],
+	["left", "right"],
+	["bone", "blood"],
+	["sun", "moon"],
+	["Japan", "South Korea"],
+	["fur", "hair"],
+	["hands", "feet"],
+	["bicycle", "tricycle"],
+	["father", "mother"],
+	["deciduous trees", "evergreen trees"],
+	["peanut", "almond"],
+	["white", "black"],
+	["comma", "period"],
+	["bagel", "donut"],
+	["donut", "donut hole"],
+	["krispy creme", "dunkin' donuts"],
+	["sunami", "hurricame"],
+	["town house", "apartment"],
+	["moon", "sun"],
+	["credit card", "debit card"],
 ];
 let PLAYERS = 4;
+var currentPlayer = 0;
+var gameArray;
 	
 
 function initialize()
@@ -44,19 +94,20 @@ function initialize()
 	cardWord = document.getElementById("word");
 	rowNumber = Math.floor((Math.random() * words.length));
 	console.log(rowNumber);
-	cardWord.innerHTML = words[rowNumber][0];
+	cardWord.innerHTML = "Click Next";
 	
 	spyNumber = Math.floor((Math.random() * PLAYERS));
+	zeroOrOne = Math.floor(Math.random()*2);
 	gameArray = [];
 	
 	for (i = 0; i < PLAYERS; i++) {
 		if(i == spyNumber)
 		{
-			gameArray.push(words[rowNumber][0]);
+			gameArray.push(words[rowNumber][zeroOrOne]);
 		}
 		else
 		{
-			gameArray.push(words[rowNumber][1]);
+			gameArray.push(words[rowNumber][1-zeroOrOne]);
 		}
 		
 		console.log(gameArray);
@@ -81,22 +132,10 @@ function toggleFlashcard()
 
 function nextFlashcard()
 {
-	cardLetter.innerHTML = "B";
-	cardWord.innerHTML = "Beijing";
-	footerLetter.innerHTML = "B";
-	footerWord.innerHTML = "Beijing";
-	document.getElementById("skyline").src = "beijing.png";
-
-}
-
-function previousFlashcard()
-{
-	cardLetter.innerHTML = "C";
-	cardWord.innerHTML = "Chicago";
-	footerLetter.innerHTML = "C";
-	footerWord.innerHTML = "Chicago";
-	document.getElementById("skyline").src = "chicago-skyline-clipart-4.jpg";
-
+	cardWord.innerHTML = gameArray[currentPlayer];
+	console.log(currentPlayer);
+	currentPlayer += 1;
+	document.getElementById("player").innerHTML = "Player " + currentPlayer;
 }
 
 window.onload = initialize;
