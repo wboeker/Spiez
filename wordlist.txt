@@ -1,0 +1,3 @@
+basketball,soccer
+backpack,suitcase
+earring,necklace
