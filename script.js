@@ -75,7 +75,7 @@ let words = [
 	["moon", "sun"],
 	["credit card", "debit card"],
 ];
-let PLAYERS = 4;
+let PLAYERS = 5;
 var currentPlayer = 0;
 var gameArray;
 	
