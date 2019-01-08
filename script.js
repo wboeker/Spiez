@@ -66,7 +66,7 @@ let words = [
 	["deciduous trees", "evergreen trees"],
 	["peanut", "almond"],
 	["white", "black"],
-	["comma", "period"],
+	["cramps", "period"],
 	["bagel", "donut"],
 	["donut", "donut hole"],
 	["krispy creme", "dunkin' donuts"],
@@ -82,15 +82,25 @@ var gameArray;
 
 function initialize()
 {
-	console.log(words[0]);
-	console.log(words[0][0]);
-	console.log(words[0][1]);
-	
 	frontCard = document.getElementById("front");
 	backCard = document.getElementById("back");
 	frontCard.style.display = "none";
 	backCard.style.display = "block";
+	
+	currentPlayer = 1;
+	document.getElementById("player").innerHTML = "Player " + currentPlayer;
+}
 
+function newRound()
+{
+	currentPlayer = 1;
+	document.getElementById("player").innerHTML = "Player " + currentPlayer;
+	
+	document.getElementById("toggle_button").disabled = false;
+	document.getElementById("next_button").disabled = false;
+	
+	alert("New Round!");
+	
 	cardWord = document.getElementById("word");
 	rowNumber = Math.floor((Math.random() * words.length));
 	console.log(rowNumber);

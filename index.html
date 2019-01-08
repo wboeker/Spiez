@@ -5,10 +5,10 @@
 </head>
 
 <h3 class="player" id="player"> Player 1 </h3>
-
+]
 <div class="button" id="new_round">
 	<div class="button__child">
-		<button onClick = "previousFlashcard()"> new round </button>
+		<button onClick = "newRound()"> new round </button>
 	</div>
 </div>
 
@@ -22,13 +22,13 @@
 
 <div class="button" id="toggle">
 	<div class="button__child">
-		<button onClick = "toggleFlashcard()"> toggle </button>
+		<button onClick = "toggleFlashcard()" disabled id = "toggle_button"> toggle </button>
 	</div>
 </div>
 
 <div class="button" id="next">
 	<div class="button__child">
-		<button onClick = "nextFlashcard()"> next </button>
+		<button onClick = "nextFlashcard()" disabled id = "next_button"> next </button>
 	</div>
 </div>
 
