@@ -70,7 +70,7 @@ let words = [
 	["bagel", "donut"],
 	["donut", "donut hole"],
 	["krispy creme", "dunkin' donuts"],
-	["sunami", "hurricame"],
+	["tsunami", "hurricame"],
 	["town house", "apartment"],
 	["moon", "sun"],
 	["credit card", "debit card"],

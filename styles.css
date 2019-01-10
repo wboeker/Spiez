@@ -18,6 +18,10 @@ div.card {
 	color: white;
 }
 
+.number_players {
+	color: white;
+}
+
 #front {
 	display: none;
 }
