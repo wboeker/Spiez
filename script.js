@@ -76,6 +76,7 @@ let words = [
 	["credit card", "debit card"],
 ];
 let PLAYERS = 5;
+var numberPlayers;
 var currentPlayer = 0;
 var gameArray;
 	
@@ -110,7 +111,8 @@ function newRound()
 	zeroOrOne = Math.floor(Math.random()*2);
 	gameArray = [];
 	
-	for (i = 0; i < PLAYERS; i++) {
+	debugger;
+	for (i = 0; i < numberPlayers; i++) {
 		if(i == spyNumber)
 		{
 			gameArray.push(words[rowNumber][zeroOrOne]);
@@ -146,6 +148,12 @@ function nextFlashcard()
 	console.log(currentPlayer);
 	currentPlayer += 1;
 	document.getElementById("player").innerHTML = "Player " + currentPlayer;
+}
+
+function setPlayers()
+{
+	numberPlayers = document.getElementById("number_players").value;
+	alert(numberPlayers);
 }
 
 window.onload = initialize;
