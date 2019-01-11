@@ -111,7 +111,6 @@ function newRound()
 	zeroOrOne = Math.floor(Math.random()*2);
 	gameArray = [];
 	
-	debugger;
 	for (i = 0; i < numberPlayers; i++) {
 		if(i == spyNumber)
 		{
