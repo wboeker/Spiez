@@ -79,6 +79,7 @@ let PLAYERS = 5;
 var numberPlayers;
 var currentPlayer = 0;
 var gameArray;
+let ONE = 1;
 	
 
 function initialize()
@@ -88,13 +89,23 @@ function initialize()
 	frontCard.style.display = "none";
 	backCard.style.display = "block";
 	
-	currentPlayer = 1;
+	currentPlayer = 0;
 	document.getElementById("player").innerHTML = "Player " + currentPlayer;
+}
+
+function newWordsGame()
+{
+	
+}
+
+function oldWordsGame()
+{
+	
 }
 
 function newRound()
 {
-	currentPlayer = 1;
+	currentPlayer = 0;
 	document.getElementById("player").innerHTML = "Player " + currentPlayer;
 	
 	document.getElementById("toggle_button").disabled = false;
