@@ -14,11 +14,24 @@ div.card {
 	border-color: #ffffe6;
 }
 
+.words {
+	margin-top: 30px;
+}
+
 .player {
 	color: white;
+	margin-top: 30px;
 }
 
 .number_players {
+	color: white;
+}
+
+.first_word {
+	color: white;
+}
+
+.second_word {
 	color: white;
 }
 

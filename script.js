@@ -89,13 +89,14 @@ function initialize()
 {
 	frontCard = document.getElementById("front");
 	backCard = document.getElementById("back");
+	newRoundButton = document.getElementById('new_round');
+	toggleButton = document.getElementById('toggle');
+	nextButton = document.getElementById('next');
+	
 	frontCard.style.display = "none";
 	backCard.style.display = "none";
-	newRoundButton = document.getElementById('new_round');
 	newRoundButton.style.visibility = 'hidden';
-	toggleButton = document.getElementById('toggle');
 	toggleButton.style.visibility = 'hidden';
-	nextButton = document.getElementById('next');
 	nextButton.style.visibility = 'hidden';
 	
 	currentPlayer = 0;
