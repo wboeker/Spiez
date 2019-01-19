@@ -35,9 +35,26 @@ div.card {
 	color: white;
 }
 
-#front {
+.menu-input {
+	color: white;
 	display: none;
 }
+
+#playerz {
+	display: none;
+}
+
+/*.first_word {
+	display:none;
+}
+
+.second_word {
+	display:none;
+}
+
+#front {
+	display: none;
+}*/
 
 #back {
 	display: block;

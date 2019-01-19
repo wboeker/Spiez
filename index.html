@@ -7,21 +7,26 @@
 <button onClick = "newWordsGame()"> New Words Game </button>
 <button onClick = "oldWordsGame()"> Old Words Game </button>
 
-<div class="words">
-  <label class = "first_word"> First Word:</label> 
-  <input id="first_word" type="text"> 
-  <label class = "second_word"> Second Word:</label> 
-  <input id="second_word" type="text">
-  <button onClick = "setPlayers()"> submit </button>
+<div class="menu-input" id="menuInput">
+	<div class="words">
+	  <label class = "first_word"> First Word:</label> 
+	  <input id="first_word" type="text"> 
+	  <label class = "second_word"> Second Word:</label> 
+	  <input id="second_word" type="text">
+	  <button onClick = "setPlayers()" id="submit"> submit </button>
+	</div>
 </div>
 
-<h3 class="player" id="player"> Player 0 </h3>
+<div id="playerz">
+	<h3 class="player" id="player"> Player 0 </h3>
 
-<div>
-  <p class = "number_players"> Number of Players:</p>
-  <input id="number_players" type="text" min="2">
-  <button onClick = "setPlayers()"> submit </button>
+	<div>
+		 <p class = "number_players"> Number of Players:</p>
+		 <input id="number_players" type="text" min="2">
+		 <button onClick = "setPlayers()"> submit </button>
+	</div>
 </div>
+
 
 <div class="button" id="new_round">
 	<div class="button__child">

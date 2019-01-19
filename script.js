@@ -83,6 +83,9 @@ let ONE = 1;
 let newRoundButton;
 let toggleButton;
 let nextButton;
+let menuInput;
+var firstWord;
+var secondWord;
 	
 
 function initialize()
@@ -105,20 +108,28 @@ function initialize()
 
 function newWordsGame()
 {
-	
-}
-
-function oldWordsGame()
-{
+	menuInput = document.getElementById("menuInput");
+	menuInput.style.display = "block";
+	document.getElementById("playerz").style.display = "block";
 	backCard.style.display = "block";
 	newRoundButton.style.visibility = 'visible';
 	toggleButton.style.visibility = 'visible';
 	nextButton.style.visibility = 'visible';
 }
 
+function oldWordsGame()
+{
+	document.getElementById("playerz").style.display = "block";
+	backCard.style.display = "block";
+	newRoundButton.style.visibility = 'visible';
+	toggleButton.style.visibility = 'visible';
+	nextButton.style.visibility = 'visible';
+	
+}
+
 function newRound()
 {
-	currentPlayer = 0;
+	icurrentPlayer = 0;
 	document.getElementById("player").innerHTML = "Player " + currentPlayer;
 	
 	document.getElementById("toggle_button").disabled = false;
