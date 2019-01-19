@@ -80,6 +80,9 @@ var numberPlayers;
 var currentPlayer = 0;
 var gameArray;
 let ONE = 1;
+let newRoundButton;
+let toggleButton;
+let nextButton;
 	
 
 function initialize()
@@ -87,7 +90,13 @@ function initialize()
 	frontCard = document.getElementById("front");
 	backCard = document.getElementById("back");
 	frontCard.style.display = "none";
-	backCard.style.display = "block";
+	backCard.style.display = "none";
+	newRoundButton = document.getElementById('new_round');
+	newRoundButton.style.visibility = 'hidden';
+	toggleButton = document.getElementById('toggle');
+	toggleButton.style.visibility = 'hidden';
+	nextButton = document.getElementById('next');
+	nextButton.style.visibility = 'hidden';
 	
 	currentPlayer = 0;
 	document.getElementById("player").innerHTML = "Player " + currentPlayer;
@@ -100,7 +109,10 @@ function newWordsGame()
 
 function oldWordsGame()
 {
-	
+	backCard.style.display = "block";
+	newRoundButton.style.visibility = 'visible';
+	toggleButton.style.visibility = 'visible';
+	nextButton.style.visibility = 'visible';
 }
 
 function newRound()
