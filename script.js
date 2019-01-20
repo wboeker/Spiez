@@ -96,6 +96,8 @@ function initialize()
 	toggleButton = document.getElementById('toggle');
 	nextButton = document.getElementById('next');
 	
+	menuInput = document.getElementById("menuInput");
+	
 	frontCard.style.display = "none";
 	backCard.style.display = "none";
 	newRoundButton.style.visibility = 'hidden';
@@ -108,8 +110,8 @@ function initialize()
 
 function newWordsGame()
 {
+	oldClick = false;
 	newClick = true;
-	menuInput = document.getElementById("menuInput");
 	menuInput.style.display = "block";
 	document.getElementById("playerz").style.display = "block";
 	backCard.style.display = "block";
@@ -120,7 +122,9 @@ function newWordsGame()
 
 function oldWordsGame()
 {
+	newClick = false;
 	oldClick = true;
+	menuInput.style.display = "none";
 	document.getElementById("playerz").style.display = "block";
 	backCard.style.display = "block";
 	newRoundButton.style.visibility = 'visible';
