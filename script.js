@@ -75,7 +75,6 @@ let words = [
 	["moon", "sun"],
 	["credit card", "debit card"],
 ];
-let PLAYERS = 5;
 var numberPlayers;
 var currentPlayer = 0;
 var gameArray;
@@ -84,8 +83,9 @@ let newRoundButton;
 let toggleButton;
 let nextButton;
 let menuInput;
-var firstWord;
-var secondWord;
+
+var newClick = false;
+var oldClick = false;
 	
 
 function initialize()
@@ -108,6 +108,7 @@ function initialize()
 
 function newWordsGame()
 {
+	newClick = true;
 	menuInput = document.getElementById("menuInput");
 	menuInput.style.display = "block";
 	document.getElementById("playerz").style.display = "block";
@@ -119,6 +120,7 @@ function newWordsGame()
 
 function oldWordsGame()
 {
+	oldClick = true;
 	document.getElementById("playerz").style.display = "block";
 	backCard.style.display = "block";
 	newRoundButton.style.visibility = 'visible';
@@ -129,7 +131,7 @@ function oldWordsGame()
 
 function newRound()
 {
-	icurrentPlayer = 0;
+	currentPlayer = 0;
 	document.getElementById("player").innerHTML = "Player " + currentPlayer;
 	
 	document.getElementById("toggle_button").disabled = false;
@@ -138,28 +140,48 @@ function newRound()
 	alert("New Round!");
 	
 	cardWord = document.getElementById("word");
-	rowNumber = Math.floor((Math.random() * words.length));
-	console.log(rowNumber);
-	cardWord.innerHTML = "Click Next";
-	
-	spyNumber = Math.floor((Math.random() * PLAYERS));
-	zeroOrOne = Math.floor(Math.random()*2);
 	gameArray = [];
+	spyNumber = Math.floor((Math.random() * numberPlayers));
 	
-	for (i = 0; i < numberPlayers; i++) {
-		if(i == spyNumber)
-		{
-			gameArray.push(words[rowNumber][zeroOrOne]);
-		}
-		else
-		{
-			gameArray.push(words[rowNumber][1-zeroOrOne]);
-		}
+	rowNumber = Math.floor((Math.random() * words.length));
+	
+	cardWord.innerHTML = "Click Next";
 		
-		console.log(gameArray);
-9	}
-
-	//skyline = document.getElementById("skyline").src;
+	zeroOrOne = Math.floor(Math.random()*2);
+	
+	if (oldClick)
+	{
+		for (i = 0; i < numberPlayers; i++) {
+			if(i == spyNumber)
+			{
+				gameArray.push(words[rowNumber][zeroOrOne]);
+			}
+			else
+			{
+				gameArray.push(words[rowNumber][1-zeroOrOne]);
+			}
+			
+			console.log(gameArray);
+		}
+	}
+	else if (newClick)
+	{
+		firstWord = document.getElementById("first_word").value;
+		secondWord = document.getElementById("second_word").value;
+		
+		for (i = 0; i < numberPlayers; i++) {
+			if(i == spyNumber)
+			{
+				gameArray.push(firstWord);
+			}
+			else
+			{
+				gameArray.push(secondWord);
+			}
+			
+			console.log(gameArray);
+		}
+	}
 }
 
 function toggleFlashcard()
