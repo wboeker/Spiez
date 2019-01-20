@@ -78,7 +78,6 @@ let words = [
 var numberPlayers;
 var currentPlayer = 0;
 var gameArray;
-let ONE = 1;
 let newRoundButton;
 let toggleButton;
 let nextButton;
@@ -86,6 +85,8 @@ let menuInput;
 
 var newClick = false;
 var oldClick = false;
+var firstWord;
+var secondWord;
 	
 
 function initialize()
@@ -170,22 +171,26 @@ function newRound()
 	}
 	else if (newClick)
 	{
-		firstWord = document.getElementById("first_word").value;
-		secondWord = document.getElementById("second_word").value;
-		
 		for (i = 0; i < numberPlayers; i++) {
-			if(i == spyNumber)
-			{
-				gameArray.push(firstWord);
-			}
-			else
-			{
-				gameArray.push(secondWord);
-			}
+		if(i == spyNumber)
+		{
+			gameArray.push(firstWord);
+		}
+		else
+		{
+			gameArray.push(secondWord);
+		}
 			
-			console.log(gameArray);
+		console.log(gameArray);
 		}
 	}
+}
+
+function submitSpy() {
+	firstWord = document.getElementById("first_word").value;
+	secondWord = document.getElementById("second_word").value;
+	document.getElementById("first_word").value = '';
+	document.getElementById("second_word").value = '';
 }
 
 function toggleFlashcard()
